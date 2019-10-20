@@ -1,0 +1,165 @@
+@value colors: "constants/colors.css";
+@value pinkAction, grayBackground, grayLine, turquoise from colors;
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tasksContainer:last-child {
+  /*margin-bottom: 0;*/
+}
+
+.taskItem {
+  display: flex;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  align-items: center;
+}
+
+.taskItemNumber {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid black;
+  text-align: center;
+  margin-right: 12px;
+}
+
+.taskItemName {
+  margin-bottom: -2px;
+}
+
+.taskAnswer {
+  margin-top: 20px;
+  display: flex;
+}
+
+.editInput {
+  background: grayBackground;
+  border-radius: 4px;
+  border: none;
+}
+
+.editVideoInput {
+  height: 60px;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.editVideoButton {
+  height: 60px;
+  width: 60px;
+  font-family: 'Ionicons';
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: pinkAction;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.videoContainer {
+  margin-top: 20px;
+}
+
+.videoPlayer {
+  width: 66%;
+  height: 260px;
+}
+
+.imagesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  margin-top: 20px;
+}
+
+.imageContainer {
+  height: 220px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(53.00px at 100% 0%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  z-index: -10;
+  position: relative;
+}
+
+@media (max-width: 1500px) {
+  .imagesContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .imagesContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imageDelete {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 0px;
+  right: 0px;
+  font-family: 'Ionicons';
+  font-size: 40px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.inputfile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.taskStatus {
+  position: absolute;
+  font-family: 'Ionicons';
+  color: turquoise;
+  top: 60px;
+  left: -60px;
+  font-size: 29px;
+}
+
+.taskStatus.reopened {
+  color: pinkAction;
+}
+
+.taskStatusContainer {
+  display: flex;
+  position: absolute;
+  top: 45px;
+  left: -80px;
+}
+
+.readyTaskStatus {
+  font-family: 'Ionicons';
+  color: turquoise;
+  font-size: 29px;
+  cursor: pointer;
+}
+
+.readyTaskStatus.reopened {
+  color: pinkAction;
+  margin-right: 12px;
+}
